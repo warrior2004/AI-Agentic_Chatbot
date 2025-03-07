@@ -16,7 +16,8 @@ list_of_files = [
     f"setup.py",
     "Dockerfile",
     ".dockerignore",
-    "requirements.txt"
+    "requirements.txt",
+    "README.md"
 ]
 
 for filepath in list_of_files:
