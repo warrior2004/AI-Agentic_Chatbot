@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import List
 from fastapi import FastAPI
 from src.ai_agent import get_response_from_ai_agent
+from langsmith import traceable
 import uvicorn
 
 #Step1: Setup Pydantic Model (Schema Validation)
@@ -17,6 +18,7 @@ app = FastAPI(title="AI Agent API")
 ALLOWED_MODEL_NAMES=["llama3-70b-8192", "mixtral-8x7b-32768", "llama-3.3-70b-versatile", "gpt-4o-mini"]
 
 @app.post("/chat")
+@traceable
 def chat_endpoint(request_state: RequestState):
     """
     API Endpoint to interact with the Chatbot using LangGraph and search tools.
