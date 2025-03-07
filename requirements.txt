@@ -7,3 +7,5 @@ pydantic
 fastapi
 uvicorn
 streamlit
+
+# -e .
